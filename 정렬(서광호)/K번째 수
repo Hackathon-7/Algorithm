@@ -1,0 +1,7 @@
+def solution(array, commands):
+    answer = []
+    for command in commands :
+        i, j, k = command
+        sort_array = sorted(array[i-1:j])
+        answer.append(sort_array[k-1])
+    return answer
