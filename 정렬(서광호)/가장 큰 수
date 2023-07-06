@@ -1,0 +1,15 @@
+def solution(numbers):
+    # 입력 배열을 문자열로 변환
+    numbers = list(map(str, numbers))
+    
+    # 정렬 알고리즘을 사용하여 배열 정렬
+    numbers.sort(key=lambda x: x*3, reverse=True)
+    
+    # 정렬된 배열을 이어 붙여서 결과 반환
+    answer = ''.join(numbers)
+    
+    # 결과가 '0'으로만 이루어진 경우, '0' 하나만 반환
+    if answer[0] == '0':
+        return '0'
+    
+    return answer
