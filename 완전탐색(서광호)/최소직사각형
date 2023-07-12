@@ -1,0 +1,8 @@
+def solution(sizes):
+    width = 0
+    height = 0
+    for size in sizes:
+        w, h = sorted(size)                         #가로 세로 구분없이 작은값부터 오게끔 정렬
+        width = max(width, w)                       #width 와 w 를 비교해서 큰 값을 width에 업데이트
+        height = max(height, h)                     #height 와 h 를 비교해서 큰 값을 height에 업데이트
+    return width * height
