@@ -1,0 +1,20 @@
+from itertools import permutations
+
+def solution(k, dungeons):
+    
+    answer = 0
+    
+    for perm in permutations(dungeons):
+        count = 0
+        current_stemina = k
+        for dungeon in perm:
+            min_stemina, stemina = dungeon
+            if current_stemina >= min_stemina:
+                current_stemina -= stemina
+                count += 1
+            else:
+                break
+
+        answer = max(answer, count)
+
+    return answer
